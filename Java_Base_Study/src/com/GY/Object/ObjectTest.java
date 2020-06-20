@@ -26,6 +26,7 @@ public class ObjectTest {
 		
 		System.out.println("------------");
 		//比较两个引用类型
-		System.out.println(studentTest_Object.equals(studentTest_Object3));
+		System.out.println(studentTest_Object2.equals(studentTest_Object3));
+		
 	}
 }
