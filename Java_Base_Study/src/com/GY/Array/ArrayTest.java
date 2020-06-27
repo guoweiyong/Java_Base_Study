@@ -1,13 +1,15 @@
 package com.GY.Array;
 
+import java.util.Arrays;
+
 public class ArrayTest {
 
 	public static void main(String[] args) {
 		
-		int[] tempArray = {80,12,34,6,50,48};
-		System.out.println("排序前数组:");
-		printArray(tempArray);
-		System.out.println("排序后数组:");
+		//int[] tempArray = {80,12,34,6,50,48};
+		//System.out.println("排序前数组:");
+		//printArray(tempArray);
+		//System.out.println("排序后数组:");
 		//冒牌排序
 		//sortArrayTest(tempArray);
 		
@@ -15,10 +17,14 @@ public class ArrayTest {
 		//selectedSortArray(tempArray);
 		
 		//插入排序法
-		insertSortArray(tempArray);
-		printArray(tempArray);
+		//insertSortArray(tempArray);
+		//printArray(tempArray);
 		
-		
+		//测试数组二分法查找
+		int[] tempArray = {11,22,33,44,55,66,77};
+		int index = getIndex(tempArray, 333);
+		System.out.println("index==" + index);
+	
 	}
 	
 	
@@ -90,6 +96,9 @@ public class ArrayTest {
 		}
 	}
 	
+	/*
+	 * 打印数组
+	 */
 	public static void printArray(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			if (i == array.length - 1) {
@@ -99,4 +108,37 @@ public class ArrayTest {
 			}
 		}
 	}
+
+
+	/*
+	 * 实现二分查找数组中的数据
+	 * 查找要求： 首先要求数组是有序的，如果是无序的则采用基本查找
+	 */
+	public static int getIndex(int[] arr, int value) {
+		int max = arr.length - 1;
+		int min = 0;
+		
+		int mid = (max + min)/2;
+		while (arr[mid] != value) {
+			if (arr[mid] > value) {
+				//代表往左边查找
+				max = mid - 1;
+			} else {
+				//往右边查找
+				min = mid + 1;
+			}
+			
+			//如果查找数据，当最小索引 大于 最大索引的时候，表示查找数据不存在
+			if (min > max) {
+				return - 1;
+			}
+			
+			mid = (max + min)/2;
+		}
+		
+		return mid;
+	}
+
+
+
 }
