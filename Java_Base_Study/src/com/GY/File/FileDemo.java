@@ -34,7 +34,7 @@ public class FileDemo {
 	}
 	
 	/*
-	 * 创建多级文件夹，如果父文件夹不存在会自动床架
+	 * 创建多级文件夹，如果父文件夹不存在会自动创建
 	 */
 	public static void creatDirs() {
 		String pathname = "/Users/guoweiyong/Desktop/测试/Test2/aaa/bbb";
